@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics Dashboard</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h2>Live Analytics</h2>
+
+  <p id="clicks">Clicks: 0</p>
+
+  <ul id="list"></ul>
+
+<script>
+const socket = io();
+
+socket.on("update", (data) => {
+  document.getElementById("clicks").innerText =
+    "Clicks: " + data.clicks;
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  data.clickData.forEach(c => {
+    const li = document.createElement("li");
+    li.innerText = `${c.time} - ${c.device}`;
+    list.appendChild(li);
+  });
+});
+</script>
+
+</body>
+</html>
