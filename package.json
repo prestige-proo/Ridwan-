@@ -1,0 +1,17 @@
+{
+  "name": "url-shortener-analytics",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "nanoid": "^4.0.0",
+    "socket.io": "^4.7.2",
+    "dotenv": "^16.3.1",
+    "user-agent": "^1.0.4"
+  }
+}
